@@ -11,7 +11,7 @@ int main() {
     char Estado01[40], NomedaCidade01[40];
     char CodigodaCarta01[4];
     int Populacao01, NumerodePontoTuristicos01;
-    float Area01, Pib01;
+    float Area01, Pib01, DensidadePopulacional1, PIBCapita1;
 
     
     printf("Digite o nome do Estado: \n");
@@ -38,11 +38,15 @@ int main() {
     printf("Carta cadastrada com Sucesso!\n");
     printf("\n");
 
+    // Dividindo população por área e pib por população.
+    DensidadePopulacional1 = (float) (Populacao01/Area01);
+    PIBCapita1 = (float) (Pib01/Populacao01);
+
 // Cadastrar a segunda carta.
     char Estado02[40], NomedaCidade02[40];
     char CodigodaCarta02[4];
     int Populacao02, NumerodePontoTuristicos02;
-    float Area02, Pib02;
+    float Area02, Pib02,DensidadePopulacional2, PIBCapita2;
 
 
     printf("Digite o nome do Estado: \n");
@@ -69,6 +73,10 @@ int main() {
     printf("Carta cadastrada com Sucesso!\n");
     printf("\n");
 
+    // Dividindo população por área e pib por população.
+    DensidadePopulacional2 = (float) (Populacao02/Area02);
+    PIBCapita2 = (float) (Pib02/Populacao02);
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
@@ -81,6 +89,9 @@ int main() {
     printf(" Área: %.2f km²\n", Area01);
     printf(" PIB: %.2f bilhões de reais\n", Pib01);
     printf(" Número de Pontos Turísticos: %d \n", NumerodePontoTuristicos01);
+    printf(" Densidade Populacional : %.2f hab/km²\n", DensidadePopulacional1);
+    printf(" PIB per Capita : %.2f reais\n", PIBCapita1);
+
 
     printf("\n");
 
@@ -92,6 +103,8 @@ int main() {
     printf(" Área: %.2f km²\n", Area02);
     printf(" PIB: %.2f bilhões de reais\n", Pib02);
     printf(" Número de Pontos Turísticos: %d \n", NumerodePontoTuristicos02);
+    printf(" Densidade Populacional : %.2f hab/km²\n", DensidadePopulacional2); 
+    printf(" PIB per Capita : %.2f reais\n", PIBCapita2);
 
     
     
