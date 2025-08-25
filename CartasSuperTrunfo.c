@@ -10,8 +10,9 @@
 int main() {
     char Estado01[40], NomedaCidade01[40];
     char CodigodaCarta01[4];
-    int Populacao01, NumerodePontoTuristicos01;
-    float Area01, Pib01, DensidadePopulacional1, PIBCapita1;
+    int NumerodePontoTuristicos01;
+    float Area01, Pib01, DensidadePopulacional1, PIBCapita1, superPoder1;
+    unsigned long int Populacao01;
 
     
     printf("Digite o nome do Estado: \n");
@@ -24,7 +25,7 @@ int main() {
     scanf("%s", &NomedaCidade01);
 
     printf("Digite o número da população: \n");
-    scanf("%d", &Populacao01);
+    scanf("%lu", &Populacao01);
 
     printf("Digite o Aréa da cidade: \n");
     scanf("%f", &Area01);
@@ -42,11 +43,14 @@ int main() {
     DensidadePopulacional1 = (float) (Populacao01/Area01);
     PIBCapita1 = (float) (Pib01/Populacao01);
 
+    superPoder1 = (Populacao01 + Area01 + Pib01 + NumerodePontoTuristicos01 + PIBCapita1+ DensidadePopulacional1);
+
 // Cadastrar a segunda carta.
     char Estado02[40], NomedaCidade02[40];
     char CodigodaCarta02[4];
-    int Populacao02, NumerodePontoTuristicos02;
-    float Area02, Pib02,DensidadePopulacional2, PIBCapita2;
+    int NumerodePontoTuristicos02;
+    float Area02, Pib02,DensidadePopulacional2, PIBCapita2, superPoder2;
+    unsigned long int Populacao02;
 
 
     printf("Digite o nome do Estado: \n");
@@ -59,7 +63,7 @@ int main() {
     scanf("%s", &NomedaCidade02);
 
     printf("Digite o número da população: \n");
-    scanf("%d", &Populacao02);
+    scanf("%lu", &Populacao02);
 
     printf("Digite a Aréa da cidade: \n");
     scanf("%f", &Area02);
@@ -77,6 +81,9 @@ int main() {
     DensidadePopulacional2 = (float) (Populacao02/Area02);
     PIBCapita2 = (float) (Pib02/Populacao02);
 
+
+    superPoder2 = (float) (Populacao02 + Area02 + Pib02 + NumerodePontoTuristicos02 + PIBCapita2+ (1/DensidadePopulacional2));
+
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
@@ -85,12 +92,13 @@ int main() {
     printf(" Estado: %s \n", Estado01);
     printf(" Código: %s \n", CodigodaCarta01);
     printf(" Nome da Cidade: %s \n", NomedaCidade01);
-    printf(" População: %d \n", Populacao01);
+    printf(" População: %lu \n", Populacao01);
     printf(" Área: %.2f km²\n", Area01);
     printf(" PIB: %.2f bilhões de reais\n", Pib01);
     printf(" Número de Pontos Turísticos: %d \n", NumerodePontoTuristicos01);
     printf(" Densidade Populacional : %.2f hab/km²\n", DensidadePopulacional1);
     printf(" PIB per Capita : %.2f reais\n", PIBCapita1);
+    printf(" Super Poder: %.2f \n", superPoder1);
 
 
     printf("\n");
@@ -99,14 +107,37 @@ int main() {
     printf(" Estado: %s \n", Estado02);
     printf(" Código: %s \n", CodigodaCarta02);
     printf(" Nome da Cidade: %s \n", NomedaCidade02);
-    printf(" População: %d \n", Populacao02);
+    printf(" População: %lu \n", Populacao02);
     printf(" Área: %.2f km²\n", Area02);
     printf(" PIB: %.2f bilhões de reais\n", Pib02);
     printf(" Número de Pontos Turísticos: %d \n", NumerodePontoTuristicos02);
     printf(" Densidade Populacional : %.2f hab/km²\n", DensidadePopulacional2); 
     printf(" PIB per Capita : %.2f reais\n", PIBCapita2);
+    printf(" Super Poder: %.2f \n", superPoder2);
+    printf("\n");
 
-    
-    
+
+    // Comparação de cartas
+    int compPopulacao, compArea, compPib, compPonTuristico, compDenPopulacional, compPibCapita, compSuperPoder;
+
+    compPopulacao = Populacao01 > Populacao02;
+    compArea = Area01 > Area02;
+    compPib = Pib01 > Pib02;
+    compPonTuristico = NumerodePontoTuristicos01 > NumerodePontoTuristicos02;
+    compDenPopulacional = DensidadePopulacional1 < DensidadePopulacional2;
+    compPibCapita = PIBCapita1 > PIBCapita2;
+    compSuperPoder = superPoder1 > superPoder2;
+
+    // Exibindo o resultado das comparações das cartas 
+
+    printf("Exibindo a comparação entre a carta 1 e carta 2. Se o resultado for 1 a carta 1 ganhou se for 0 carta 2 ganhou:\n");
+    printf(" População: %d \n", compPopulacao);
+    printf(" Área: %d \n", compArea);
+    printf(" PIB: %d \n", compPib);
+    printf(" Pontos Turísticos: %d \n", compPonTuristico);
+    printf(" Densidade Populacional: %d \n", compDenPopulacional);
+    printf(" PIB per Capita: %d \n", compPibCapita);
+    printf(" Super Poder: %d \n", compSuperPoder);
+
     return 0;
 }
