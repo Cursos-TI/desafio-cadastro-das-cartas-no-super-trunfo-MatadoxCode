@@ -16,3 +16,21 @@ printf("Exibindo a comparação entre a carta 1 e carta 2. Se o resultado for 1 
     printf(" Densidade Populacional: %d \n", compDenPopulacional);
     printf(" PIB per Capita: %d \n", compPibCapita);
     printf(" Super Poder: %d \n", compSuperPoder);
+
+
+
+     // Comparação de carta.
+    //Exibindo o resultado da comparaçõe da carta. 
+    printf("Comparação de cartas (Atributo: Número de pontos turístico):\n");
+   if (NumerodePontoTuristicos01 > NumerodePontoTuristicos02){
+        printf("Carta 1 - %s: %d\n",Estado01, NumerodePontoTuristicos01);
+        printf("Carta 2 - %s: %d\n",Estado02, NumerodePontoTuristicos02);
+        printf("Resultado: Carta número 1 (%s) venceu!\n", Estado01);
+        
+   } 
+   else{
+        printf("Carta 1 - %s: %d\n",Estado01, NumerodePontoTuristicos01);
+        printf("Carta 2 - %s: %d\n",Estado02, NumerodePontoTuristicos02);
+        printf("Carta número 2 (%s) venceu!\n", Estado02);
+   }
+   
